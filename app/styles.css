@@ -486,6 +486,18 @@ body {
             flex-direction: column;
 }
 
+.main iframe{
+  -ms-flex-item-align:center;
+      -ms-grid-row-align:center;
+      align-self:center;
+  margin: 30px 0px 30px 0px;
+}
+
+.main p{
+  text-align: center;
+  line-height: 3rem;
+}
+
 .picture{
     width:900px;
     height:700px;

@@ -50,6 +50,14 @@ body {
 .main{
     display: flex;
     flex-direction: column;
+    iframe{
+        align-self:center;
+        margin: 30px 0px 30px 0px;
+    }
+    p{
+        text-align: center;
+        line-height: 3rem;
+    }
 }
 .picture{
     width:900px;
