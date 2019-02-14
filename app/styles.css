@@ -493,11 +493,6 @@ body {
   margin: 30px 0px 30px 0px;
 }
 
-.main p{
-  text-align: center;
-  line-height: 3rem;
-}
-
 .picture{
     width:900px;
     height:700px;
@@ -528,7 +523,9 @@ body {
 }
 
 .description p{
-  margin:10px;
+  margin: 0 auto;
+  text-align: justify;
+  line-height: 3rem;
 }
 
 .description_left{
@@ -580,4 +577,16 @@ body {
   padding:10px;
 }
 
-/* ============================================= S E K C J E =========================================== */
+.copyright{
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #313131;
+    color: rgba(255, 255, 255, 0.596);
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+.copyright a{
+  color:rgba(255, 255, 255, 0.596);
+}
