@@ -1,58 +1,70 @@
 <html>
+
 <head>
-                <meta charset="utf-8">
+        <meta charset="utf-8">
+        <meta name="description" content="Hurtownia warzyw i owoców Bulnex">
+        <meta name="keywords" content="hurtowania, hurt, warzywa, warzyw, owoce, owoców, szczecin">
+        <meta name="author" content="Jakub Adamus">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<title>
-    Bulnex
-</title>
+        <title>
+                Bulnex - hurtownia warzyw i owoców
+        </title>
 </head>
 
 <body>
-    <div class="banner">
-       <a href="index.html"><img class="logo" src="assets/images/logo.png" alt=""></a>  
-    </div>
-    <div class="menu shadow">
-        <button class="menu_button" onclick="location.href='index.html';">Główna</button>
-        <button class="menu_button" onclick="location.href='oferta.html';">Oferta</button>
-        <button class="menu_button" onclick="location.href='kontakt.html';">Kontakt</button>
-    </div>
-    <div class="main">
-        <div class="picture">
-<img src="assets/images/1.jpg" alt="">
+        <div class="loading" id="loading">
+                <div class="bar rotating">
+                </div>
         </div>
-        <hr class="horizontal_line">
-            <div class="description">
-                <div class="description_left">
-                        <p>    <strong> ETA </strong> to zespół <strong>rockowy</strong> ze Szczecina, grający muzykę, która jest swoistym kompromisem między nowoczesnym rockiem, a <strong>punk rockiem</strong>. Można powiedzieć, że <strong>gatunek wypracowany przez ETĘ</strong> to połączenie energicznych rytmów punkowych z zapadającymi w głowę melodiami z pogranicza rocka i grunge, a wszystko to okraszone nowoczesnymi <strong>aranżacjami</strong>. 
-                        </p>
-                </div>
-                <div class="description_right">
-                        <p>     ETA to nieślubne dziecko <strong>Rolling Stones i Nirvany</strong>, które wychowało się u boku wujka <strong>Green Daya</strong>. ETA ma za sobą wiele koncertów w Polsce oraz poza nią (m.in. zwycięzcy Pashion of the Young Festival w Niemczech, a także jako <strong>gwiazda wieczoru</strong> na Woodstock Ukraine 2018). 
-                        </p>
-                </div>
-            </div>
-        <hr class="horizontal_line">
+        <div class="banner">
+                <a href="index.html"><img class="logo" src="assets/images/logo.png" alt=""></a>
+        </div>
+        <div class="menu shadow">
+                <button class="menu_button" id="glowna">Strona główna</button>
+                <button class="menu_button" id="oferta">Oferta</button>
+                <button class="menu_button" id="kontakt">Kontakt</button>
+        </div>
+        <div class="main" id="main">
+        </div>
         <div class="footer shadow">
                 <div class="footer_left">
-                        <p>     <span class="footer_yellow">Kontakt i zamówienia</span> <br>
+                        <p> <span class="footer_yellow">Kontakt i zamówienia</span> <br>
                                 <a href="mailto:bulnex@o2.pl">bulnex@o2.pl</a>
                                 <br>
                                 Tel kom: 505 159 333
                         </p>
                 </div>
                 <div class="footer_right">
-                        <p>     <span class="footer_yellow">Siedziba firmy</span> <br>
+                        <p> <span class="footer_yellow">Siedziba firmy</span> <br>
                                 Wyzwolenia 85
-                                
                         </p>
                 </div>
         </div>
-    </div>
-    <div class="copyright">
-		2019 Wszystkie prawa zastrzeżone. Stworzono dla BULNEX.
-		<a id="link" href="http://www.jakubadamus.pl">(www.jakubadamus.pl)</a>
-	</div>
+        <div class="copyright">
+                2019 Wszystkie prawa zastrzeżone. Stworzono dla BULNEX.
+                <a id="link" href="http://www.jakubadamus.pl">(www.jakubadamus.pl)</a>
+        </div>
 </body>
+<script type="text/javascript" src="assets/scripts/onload.js"></script>
+<script>
+        $('#glowna').click(function () { load("glowna.html"); });
+        $('#oferta').click(function () { load("oferta.html"); });
+        $('#kontakt').click(function () { load("kontakt.html"); });
+        function load(a) {
+                var xhr = new XMLHttpRequest();
+                xhr.onload = function () {
+                        if (xhr.status === 200) {
+                                document.getElementById('main').innerHTML = xhr.responseText;
+                        }
+                }
+                xhr.open('GET', a, true);
+                xhr.send(null);
+        }
+        $(window).on("load", function () {
+                load("glowna.html");
+        });
+</script>
 
 </html>
